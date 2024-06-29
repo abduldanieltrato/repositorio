@@ -1,0 +1,27 @@
+/* Estilo para a visualização detalhada do consumível */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.consumivel-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.consumivel-details p {
+    margin-bottom: 10px;
+}
+
+.consumivel-details p strong {
+    font-weight: bold;
+    margin-right: 5px;
+}

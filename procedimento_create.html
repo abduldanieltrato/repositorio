@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Procedimento Médico</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Procedimento Médico</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome_procedimento">Nome:</label><br>
+            <input type="text" id="nome_procedimento" name="nome_procedimento"><br>
+            <label for="outros_dados">Outros Dados:</label><br>
+            <textarea id="outros_dados" name="outros_dados"></textarea><br>
+            <button type="submit">Criar Procedimento</button>
+        </form>
+    </div>
+</body>
+</html>

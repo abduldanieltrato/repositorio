@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Detalhes dos Funcionários</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Detalhes dos Funcionários</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Data de Admissão</th>
+                    <th>Salário</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for detalhe in detalhes_funcionario %}
+                    <tr>
+                        <td>{{ detalhe.id }}</td>
+                        <td>{{ detalhe.nome }}</td>
+                        <td>{{ detalhe.cargo }}</td>
+                        <td>{{ detalhe.departamento }}</td>
+                        <td>{{ detalhe.data_admissao }}</td>
+                        <td>{{ detalhe.salario }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

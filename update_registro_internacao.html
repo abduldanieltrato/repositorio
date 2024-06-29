@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Registro de Internação</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Registro de Internação</h1>
+        <form id="updateForm">
+            <label for="paciente_id">ID do Paciente:</label>
+            <input type="text" id="paciente_id" name="paciente_id" required>
+            
+            <label for="data_entrada">Data de Entrada:</label>
+            <input type="date" id="data_entrada" name="data_entrada" required>
+            
+            <label for="data_saida">Data de Saída:</label>
+            <input type="date" id="data_saida" name="data_saida" required>
+            
+            <label for="quarto">Quarto:</label>
+            <input type="text" id="quarto" name="quarto" required>
+            
+            <label for="motivo">Motivo:</label>
+            <textarea id="motivo" name="motivo" required></textarea>
+            
+            <label for="outros_dados">Outros Dados:</label>
+            <textarea id="outros_dados" name="outros_dados" required></textarea>
+            
+            <button type="submit">Atualizar</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let registro_internacao_id = {{ registro_internacao_id }};
+            let data = {
+                paciente_id: document.getElementById('paciente_id').value,
+                data_entrada: document.getElementById('data_entrada').value,
+                data_saida: document.getElementById('data_saida').value,
+                quarto: document.getElementById('quarto').value,
+                motivo: document.getElementById('motivo').value,
+                outros_dados: document.getElementById('outros_dados').value
+            };
+
+            fetch(`/registro_internacao_update/${registro_internacao_id}/`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = data.mensagem;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

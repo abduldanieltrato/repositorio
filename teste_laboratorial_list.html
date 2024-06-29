@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Testes Laboratoriais</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Testes Laboratoriais</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Teste</th>
+                <th>Descrição</th>
+                <!-- Adicione mais colunas conforme necessário -->
+            </tr>
+            {% for teste in testes_laboratoriais %}
+            <tr>
+                <td>{{ teste.id }}</td>
+                <td>{{ teste.nome }}</td>
+                <td>{{ teste.descricao }}</td>
+                <!-- Adicione mais colunas conforme necessário -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

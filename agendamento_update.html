@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Agendamento</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Agendamento</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="especialidade_id">Especialidade ID:</label><br>
+            <input type="text" id="especialidade_id" name="especialidade_id" value="{{ agendamento.especialidade_id }}"><br>
+            <label for="funcionario_id">Funcionário ID:</label><br>
+            <input type="text" id="funcionario_id" name="funcionario_id" value="{{ agendamento.funcionario_id }}"><br>
+            <label for="exame_id">Exame ID:</label><br>
+            <input type="text" id="exame_id" name="exame_id" value="{{ agendamento.exame_id }}"><br>
+            <label for="nome_agendamento">Nome do Agendamento:</label><br>
+            <input type="text" id="nome_agendamento" name="nome_agendamento" value="{{ agendamento.nome_agendamento }}"><br>
+            <label for="data_agendamento">Data do Agendamento:</label><br>
+            <input type="text" id="data_agendamento" name="data_agendamento" value="{{ agendamento.data_agendamento }}"><br>
+            <label for="procedimento_id">Procedimento ID:</label><br>
+            <input type="text" id="procedimento_id" name="procedimento_id" value="{{ agendamento.procedimento_id }}"><br>
+            <label for="outros_dados">Outros Dados:</label><br>
+            <textarea id="outros_dados" name="outros_dados">{{ agendamento.outros_dados }}</textarea><br>
+            <button type="submit">Atualizar Agendamento</button>
+        </form>
+    </div>
+</body>
+</html>

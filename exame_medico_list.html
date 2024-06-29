@@ -1,0 +1,18 @@
+<!-- exame_medico_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Exames Médicos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Lista de Exames Médicos</h1>
+    <ul>
+        {% for exame in exames %}
+        <li>{{ exame.nome_exame }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

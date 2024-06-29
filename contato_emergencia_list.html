@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos de Emergência</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Contatos de Emergência</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Relação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contato in contatos %}
+                <tr>
+                    <td>{{ contato.nome }}</td>
+                    <td>{{ contato.telefone }}</td>
+                    <td>{{ contato.relacao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

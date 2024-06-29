@@ -1,0 +1,38 @@
+/* Estilos para a página de atualização do consumível */
+
+/* Estilo para o formulário */
+form {
+    margin: 20px;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de enviar */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Estilo para o botão de enviar quando passa o mouse por cima */
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para as mensagens de erro */
+.error-message {
+    color: red;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Fatura</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Fatura</h1>
+        <ul>
+            <li><strong>Nome da Fatura:</strong> {{ fatura.nome_fatura }}</li>
+            <li><strong>Data da Fatura:</strong> {{ fatura.data_fatura }}</li>
+            <li><strong>Pagamento:</strong> {{ fatura.pagamento }}</li>
+            <li><strong>Outros Dados:</strong> {{ fatura.outros_dados }}</li>
+        </ul>
+    </div>
+</body>
+</html>

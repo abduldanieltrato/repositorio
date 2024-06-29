@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Histórico de Consulta</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Histórico de Consulta</h1>
+        <ul>
+            <li><strong>Paciente ID:</strong> {{ historico_consulta.paciente_id }}</li>
+            <li><strong>Funcionário ID:</strong> {{ historico_consulta.funcionario_id }}</li>
+            <li><strong>Data da Consulta:</strong> {{ historico_consulta.data_consulta }}</li>
+            <li><strong>Diagnóstico:</strong> {{ historico_consulta.diagnostico }}</li>
+            <li><strong>Tratamento:</strong> {{ historico_consulta.tratamento }}</li>
+            <li><strong>Outros Dados:</strong> {{ historico_consulta.outros_dados }}</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- departamento_list.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Departamentos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Departamentos</h1>
+        <ul class="departamento-list">
+            {% for departamento in departamentos %}
+                <li class="departamento-item">
+                    {{ departamento.nome_departamento }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

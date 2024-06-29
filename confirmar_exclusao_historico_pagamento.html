@@ -1,0 +1,42 @@
+<!-- confirmar_exclusao_historico_pagamento.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão</h1>
+        <p>Tem certeza que deseja excluir o histórico de pagamento com ID: {{ historico_pagamento.id }}?</p>
+        <button id="confirmarExclusao">Sim, excluir</button>
+        <button onclick="window.location.href='/';">Cancelar</button>
+        <div id="mensagem"></div>
+    </div>
+
+    <script>
+        document.getElementById('confirmarExclusao').addEventListener('click', function() {
+            fetch(`/historico_pagamento_delete/{{ historico_pagamento.id }}/`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('mensagem').innerText = 'Histórico de pagamento excluído com sucesso!';
+                } else {
+                    throw new Error('Falha ao excluir o histórico de pagamento.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('mensagem').innerText = 'Erro ao excluir o histórico de pagamento.';
+            });
+        });
+    </script>
+</body>
+</html>

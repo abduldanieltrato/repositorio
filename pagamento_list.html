@@ -1,0 +1,20 @@
+<!-- pagamento_list.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pagamentos</title>
+    <!-- Adicione links para os estilos CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pagamentos</h1>
+        <ul>
+            {% for pagamento in pagamentos %}
+            <li>{{ pagamento.nome_pagamento }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

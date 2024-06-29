@@ -1,0 +1,20 @@
+<!-- contato_emergencia_delete.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Contato de Emergência</title>
+    <!-- Adicione links para os estilos CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Contato de Emergência</h1>
+        <p>Tem certeza de que deseja excluir o contato de emergência "{{ contato.nome }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar Exclusão</button>
+        </form>
+    </div>
+</body>
+</html>

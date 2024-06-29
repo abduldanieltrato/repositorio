@@ -1,0 +1,31 @@
+/* style.css */
+
+/* Estilos para o contêiner */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para os títulos */
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para os parágrafos */
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Estilos para os links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

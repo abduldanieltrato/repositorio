@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Procedimento Cirúrgico</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Procedimento Cirúrgico</h1>
+        <ul>
+            <li><strong>Paciente ID:</strong> {{ procedimento_cirurgico.paciente_id }}</li>
+            <li><strong>Tipo de Procedimento:</strong> {{ procedimento_cirurgico.tipo_procedimento }}</li>
+            <li><strong>Médico Cirurgião:</strong> {{ procedimento_cirurgico.medico_cirurgiao }}</li>
+            <li><strong>Data da Cirurgia:</strong> {{ procedimento_cirurgico.data_cirurgia }}</li>
+            <li><strong>Outros Dados:</strong> {{ procedimento_cirurgico.outros_dados }}</li>
+        </ul>
+    </div>
+</body>
+</html>

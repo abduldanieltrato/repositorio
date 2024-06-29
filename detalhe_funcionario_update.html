@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Detalhe do Funcionário</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Detalhe do Funcionário</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="funcionario_id">ID do Funcionário:</label><br>
+            <input type="text" id="funcionario_id" name="funcionario_id" value="{{ detalhe_funcionario.funcionario_id }}" required><br>
+            <label for="nacionalidade">Nacionalidade:</label><br>
+            <input type="text" id="nacionalidade" name="nacionalidade" value="{{ detalhe_funcionario.nacionalidade }}" required><br>
+            <button type="submit">Atualizar Detalhe</button>
+        </form>
+    </div>
+</body>
+</html>

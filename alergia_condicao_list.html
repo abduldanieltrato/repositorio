@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alergias e Condições</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Alergias e Condições</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Alergia/Condição</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alergia_condicao in alergias_condicoes %}
+                <tr>
+                    <td>{{ alergia_condicao.nome }}</td>
+                    <td>{{ alergia_condicao.descricao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

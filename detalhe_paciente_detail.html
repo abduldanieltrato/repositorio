@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Paciente</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Paciente</h1>
+        <table>
+            <tr>
+                <th>ID do Paciente:</th>
+                <td>{{ detalhe_paciente.paciente_id }}</td>
+            </tr>
+            <tr>
+                <th>Nacionalidade:</th>
+                <td>{{ detalhe_paciente.nacionalidade }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'detalhe_paciente_list' %}">Voltar à Lista</a>
+    </div>
+</body>
+</html>

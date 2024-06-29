@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Consumível</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/consumivel_detail.css' %}">
+</head>
+<body>
+    <h1>Detalhes do Consumível</h1>
+    <div class="consumivel-details">
+        <p><strong>Nome:</strong> {{ consumivel.nome_consumivel }}</p>
+        <p><strong>Estoque:</strong> {{ consumivel.estoque_consumivel }}</p>
+        <p><strong>Data de Aquisição:</strong> {{ consumivel.data_aquisicao }}</p>
+        <p><strong>Departamento:</strong> {{ consumivel.departamento }}</p>
+        <p><strong>Outros Dados:</strong> {{ consumivel.outros_dados }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- departamento_detail.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Departamento</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Departamento</h1>
+        <div>
+            <p><strong>Nome do Departamento:</strong> {{ departamento.nome_departamento }}</p>
+            <p><strong>Responsável:</strong> {{ departamento.responsavel.nome_funcionario if departamento.responsavel else 'Nenhum' }}</p>
+            <p><strong>Outros Dados:</strong> {{ departamento.outros_dados }}</p>
+        </div>
+    </div>
+</body>
+</html>

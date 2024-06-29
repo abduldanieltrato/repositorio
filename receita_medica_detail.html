@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Receita Médica</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Receita Médica</h1>
+        <p><strong>Nome do Paciente:</strong> {{ receita_medica.nome_paciente }}</p>
+        <p><strong>Data:</strong> {{ receita_medica.data }}</p>
+        <!-- Adicione outros detalhes da receita médica conforme necessário -->
+    </div>
+</body>
+</html>

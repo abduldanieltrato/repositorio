@@ -1,0 +1,40 @@
+/* styles.css */
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Estilo para rótulos de entrada */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para entrada de texto */
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para botão de envio */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Alterar cor do botão quando hover */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

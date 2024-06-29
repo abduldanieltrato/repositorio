@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Registro de Vacinação</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Registro de Vacinação</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="paciente_id">Paciente ID:</label><br>
+            <input type="text" id="paciente_id" name="paciente_id"><br>
+            <label for="tipo_vacina">Tipo de Vacina:</label><br>
+            <input type="text" id="tipo_vacina" name="tipo_vacina"><br>
+            <label for="data_vacinacao">Data de Vacinação:</label><br>
+            <input type="date" id="data_vacinacao" name="data_vacinacao"><br>
+            <label for="lote_vacina">Lote de Vacina:</label><br>
+            <input type="text" id="lote_vacina" name="lote_vacina"><br>
+            <label for="outros_dados">Outros Dados:</label><br>
+            <textarea id="outros_dados" name="outros_dados"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

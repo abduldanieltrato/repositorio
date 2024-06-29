@@ -1,0 +1,19 @@
+<!-- paciente_detail.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Paciente</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Paciente</h1>
+        <p><strong>Nome:</strong> {{ paciente.nome }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ paciente.data_nascimento }}</p>
+        <!-- Adicione outros detalhes do paciente conforme necessário -->
+    </div>
+</body>
+</html>

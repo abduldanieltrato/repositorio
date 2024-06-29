@@ -1,0 +1,16 @@
+<!-- equipamento_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Equipamento</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Detalhes do Equipamento</h1>
+    <p><strong>Nome do Equipamento:</strong> {{ equipamento.nome_equipamento }}</p>
+    <p><strong>Data de Aquisição:</strong> {{ equipamento.data_aquisicao }}</p>
+    <p><strong>Estoque do Equipamento:</strong> {{ equipamento.estoque_equipamento }}</p>
+</body>
+</html>

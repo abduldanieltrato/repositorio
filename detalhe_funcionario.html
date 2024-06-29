@@ -1,0 +1,45 @@
+<!-- myapp/templates/myapp/detalhe_funcionario.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Funcionário</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Funcionário</h1>
+        <div id="funcionario-details">
+            <p><strong>Nome:</strong> <span id="nome_funcionario"></span></p>
+            <p><strong>Data de Nascimento:</strong> <span id="data_nascimento"></span></p>
+            <p><strong>Data de Contratação:</strong> <span id="data_contratacao"></span></p>
+            <p><strong>Departamento:</strong> <span id="departamento"></span></p>
+            <p><strong>Outros Dados:</strong> <span id="outros_dados"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let funcionario_id = {{ funcionario_id }};
+            
+            fetch(`/funcionario_detail/${funcionario_id}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                let funcionario = data.funcionario;
+                document.getElementById('nome_funcionario').innerText = funcionario.nome_funcionario;
+                document.getElementById('data_nascimento').innerText = funcionario.data_nascimento;
+                document.getElementById('data_contratacao').innerText = funcionario.data_contratacao;
+                document.getElementById('departamento').innerText = funcionario.departamento;
+                document.getElementById('outros_dados').innerText = funcionario.outros_dados;
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>

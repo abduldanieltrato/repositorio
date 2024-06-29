@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Seguradora</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Seguradora</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nome_seguradora">Nome:</label><br>
+            <input type="text" id="nome_seguradora" name="nome_seguradora" value="{{ seguradora.nome_seguradora }}"><br>
+            <label for="outros_dados">Outros Dados:</label><br>
+            <textarea id="outros_dados" name="outros_dados">{{ seguradora.outros_dados }}</textarea><br>
+            <button type="submit">Atualizar Seguradora</button>
+        </form>
+    </div>
+</body>
+</html>

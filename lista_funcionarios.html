@@ -1,0 +1,54 @@
+<!-- myapp/templates/myapp/lista_funcionarios.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Funcionários</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Funcionários</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Posição</th>
+                    <th>Departamento</th>
+                </tr>
+            </thead>
+            <tbody id="funcionarios-tbody">
+                <!-- Os dados serão preenchidos aqui via JavaScript -->
+            </tbody>
+        </table>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/funcionario_list/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                let tbody = document.getElementById('funcionarios-tbody');
+                data.funcionarios.forEach(funcionario => {
+                    let row = `<tr>
+                        <td>${funcionario.id}</td>
+                        <td>${funcionario.nome}</td>
+                        <td>${funcionario.posicao}</td>
+                        <td>${funcionario.departamento}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>

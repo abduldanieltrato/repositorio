@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Registro de Vacinação</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Registro de Vacinação</h1>
+        <table>
+            <tr>
+                <th>Paciente ID:</th>
+                <td>{{ registro_vacinacao.paciente_id }}</td>
+            </tr>
+            <tr>
+                <th>Tipo de Vacina:</th>
+                <td>{{ registro_vacinacao.tipo_vacina }}</td>
+            </tr>
+            <tr>
+                <th>Data de Vacinação:</th>
+                <td>{{ registro_vacinacao.data_vacinacao }}</td>
+            </tr>
+            <tr>
+                <th>Lote de Vacina:</th>
+                <td>{{ registro_vacinacao.lote_vacina }}</td>
+            </tr>
+            <tr>
+                <th>Outros Dados:</th>
+                <td>{{ registro_vacinacao.outros_dados }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

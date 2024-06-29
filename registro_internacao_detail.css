@@ -1,0 +1,18 @@
+/* styles.css */
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #333; /* Cor do texto */
+    font-size: 24px; /* Tamanho da fonte */
+}
+
+/* Estilo para a lista de detalhes */
+ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    padding: 0; /* Remover preenchimento padrão */
+}
+
+/* Estilo para cada item da lista */
+li {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}

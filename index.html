@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'fatura_list' %}">Faturas</a></li>
+            <li><a href="{% url 'consumivel_list' %}">Consumíveis</a></li>
+            <li><a href="{% url 'consulta_list' %}">Consultas</a></li>
+	        <li><a href="{% url 'historico_pagamento_list' %}">Histórico de Pagamentos</a></li>
+            <li><a href="{% url 'paciente_list' %}">Pacientes</a></li>
+            <li><a href="{% url 'pagamento_list' %}">Pagamentos</a></li>
+            <li><a href="{% url 'exame_medico_list' %}">Exames Médicos</a></li>
+            <li><a href="{% url 'seguradora_list' %}">Seguradoras</a></li>
+            <li><a href="{% url 'procedimento_list' %}">Procedimentos Médicos</a></li>
+            <li><a href="{% url 'agendamento_list' %}">Agendamentos</a></li>
+            <li><a href="{% url 'detalhe_funcionario_list' %}">Detalhes dos Funcionários</a></li>
+            <li><a href="{% url 'detalhe_paciente_list' %}">Detalhes dos Pacientes</a></li>
+            <li><a href="{% url 'receita_medica_list' %}">Receitas Médicas</a></li>
+            <li><a href="{% url 'registro_internacao_list' %}">Registros de Internação</a></li>
+            <li><a href="{% url 'historico_consulta_list' %}">Histórico de Consultas</a></li>
+            <li><a href="{% url 'procedimento_cirurgico_list' %}">Procedimentos Cirúrgicos</a></li>
+            <li><a href="{% url 'registro_vacinacao_list' %}">Registros de Vacinação</a></li>
+            <li><a href="{% url 'teste_laboratorial_list' %}">Testes Laboratoriais</a></li>
+            <li><a href="{% url 'alergia_condicao_list' %}">Alergias e Condições</a></li>
+            <li><a href="{% url 'historico_pagamento_list' %}">Histórico de Pagamentos</a></li>
+            <li><a href="{% url 'contato_emergencia_list' %}">Contatos de Emergência</a></li>
+            <li><a href="{% url 'especialidade_list' %}">Especialidades Médicas</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

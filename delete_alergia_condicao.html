@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Alergia ou Condição</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Alergia ou Condição</h1>
+        <p>Você tem certeza de que deseja excluir esta alergia ou condição?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar Exclusão</button>
+        </form>
+    </div>
+</body>
+</html>

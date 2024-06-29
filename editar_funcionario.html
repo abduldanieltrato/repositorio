@@ -1,0 +1,71 @@
+<!-- myapp/templates/myapp/editar_funcionario.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Funcionário</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Funcionário</h1>
+        <form id="updateForm">
+            <label for="departamento_id">ID do Departamento:</label>
+            <input type="text" id="departamento_id" name="departamento_id" value="{{ funcionario.departamento_id }}" required>
+
+            <label for="nome_funcionario">Nome do Funcionário:</label>
+            <input type="text" id="nome_funcionario" name="nome_funcionario" value="{{ funcionario.nome_funcionario }}" required>
+
+            <label for="data_nascimento">Data de Nascimento:</label>
+            <input type="date" id="data_nascimento" name="data_nascimento" value="{{ funcionario.data_nascimento }}" required>
+
+            <label for="data_contratacao">Data de Contratação:</label>
+            <input type="date" id="data_contratacao" name="data_contratacao" value="{{ funcionario.data_contratacao }}" required>
+
+            <label for="outros_dados">Outros Dados:</label>
+            <textarea id="outros_dados" name="outros_dados">{{ funcionario.outros_dados }}</textarea>
+
+            <button type="submit">Atualizar Funcionário</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            let data = {
+                departamento_id: formData.get('departamento_id'),
+                nome_funcionario: formData.get('nome_funcionario'),
+                data_nascimento: formData.get('data_nascimento'),
+                data_contratacao: formData.get('data_contratacao'),
+                outros_dados: formData.get('outros_dados')
+            };
+
+            fetch(`/funcionario_update/${{{ funcionario.id }}}/`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Falha ao atualizar o funcionário.');
+                }
+            })
+            .then(data => {
+                document.getElementById('message').innerText = data.mensagem;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('message').innerText = 'Erro ao atualizar o funcionário.';
+            });
+        });
+    </script>
+</body>
+</html>

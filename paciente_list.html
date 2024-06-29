@@ -1,0 +1,21 @@
+<!-- paciente_list.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pacientes</h1>
+        <ul>
+            {% for paciente in pacientes %}
+            <li>{{ paciente.nome }} - {{ paciente.data_nascimento }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

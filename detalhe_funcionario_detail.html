@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do Funcionário</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhe do Funcionário</h1>
+        <div class="details">
+            <p><strong>ID do Funcionário:</strong> {{ detalhe_funcionario.funcionario_id }}</p>
+            <p><strong>Nacionalidade:</strong> {{ detalhe_funcionario.nacionalidade }}</p>
+            <a href="{% url 'detalhe_funcionario_list' %}">Voltar à lista</a>
+        </div>
+    </div>
+</body>
+</html>

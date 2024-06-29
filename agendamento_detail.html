@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Agendamento</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Agendamento</h1>
+        <p><strong>Especialidade ID:</strong> {{ agendamento.especialidade_id }}</p>
+        <p><strong>Funcionário ID:</strong> {{ agendamento.funcionario_id }}</p>
+        <p><strong>Exame ID:</strong> {{ agendamento.exame_id }}</p>
+        <p><strong>Nome do Agendamento:</strong> {{ agendamento.nome_agendamento }}</p>
+        <p><strong>Data do Agendamento:</strong> {{ agendamento.data_agendamento }}</p>
+        <p><strong>Procedimento ID:</strong> {{ agendamento.procedimento_id }}</p>
+        <p><strong>Outros Dados:</strong> {{ agendamento.outros_dados }}</p>
+    </div>
+</body>
+</html>

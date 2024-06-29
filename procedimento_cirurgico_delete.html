@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão</h1>
+        <div class="confirmation-message">
+            <p>Você tem certeza que deseja excluir este procedimento cirúrgico?</p>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Sim, Excluir">
+                <a href="{% url 'listar_procedimentos_cirurgicos' %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

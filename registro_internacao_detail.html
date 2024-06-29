@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Registro de Internação</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Detalhes do Registro de Internação</h1>
+    <ul>
+        <li>Paciente ID: {{ registro_internacao.paciente_id }}</li>
+        <li>Data de Entrada: {{ registro_internacao.data_entrada }}</li>
+        <li>Data de Saída: {{ registro_internacao.data_saida }}</li>
+        <li>Quarto: {{ registro_internacao.quarto }}</li>
+        <li>Motivo: {{ registro_internacao.motivo }}</li>
+        <li>Outros Dados: {{ registro_internacao.outros_dados }}</li>
+    </ul>
+</body>
+</html>

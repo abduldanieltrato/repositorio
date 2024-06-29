@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão de Paciente</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão de Paciente</h1>
+        <p>Tem certeza de que deseja excluir o paciente <strong>{{ paciente.nome }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Sim, excluir</button>
+        </form>
+        <p><a href="/">Cancelar</a></p>
+    </div>
+</body>
+</html>

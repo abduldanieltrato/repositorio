@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros de Vacinação</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Registros de Vacinação</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Paciente</th>
+                    <th>Data da Vacinação</th>
+                    <!-- Adicione mais colunas conforme necessário -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in registros_vacinacao %}
+                <tr>
+                    <td>{{ registro.id }}</td>
+                    <td>{{ registro.nome_paciente }}</td>
+                    <td>{{ registro.data_vacinacao }}</td>
+                    <!-- Adicione mais colunas conforme necessário -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

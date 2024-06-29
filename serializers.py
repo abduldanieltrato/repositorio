@@ -1,19 +1,28 @@
 from rest_framework import serializers
-from models import (Departamento, EspecialidadeMedica, Funcionario, Consulta, Paciente, Pagamento, ExameMedico,
-                    Equipamento, Fatura, Consumivel, Seguradora, ProcedimentoMedico, Agendamento, DetalheFuncionario,
-                    DetalhePaciente, ReceitaMedica, RegistroInternacao, HistoricoConsulta, ProcedimentoCirurgico,
-                    RegistroVacinacao, TesteLaboratorial, AlergiaCondicao, HistoricoPagamento, ContatoEmergencia)
+from .models import (Paciente, Departamento, Funcionario, Consulta, Pagamento, ExameMedico, Equipamento,
+                     Fatura, Consumivel, Seguradora, ProcedimentoMedico, Agendamento, DetalheFuncionario,
+                     DetalhePaciente, ReceitaMedica, RegistroInternacao, HistoricoConsulta,
+                     ProcedimentoCirurgico,
+                     RegistroVacinacao, TesteLaboratorial, AlergiaCondicao, HistoricoPagamento,
+                     ContatoEmergencia,
+                     Post, EspecialidadeMedica)
+
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = '__all__'
+
+
+class PacienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Paciente
+        fields = '__all__'
 
 
 class DepartamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Departamento
-        fields = '__all__'
-
-
-class EspecialidadeMedicaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EspecialidadeMedica
         fields = '__all__'
 
 
@@ -26,12 +35,6 @@ class FuncionarioSerializer(serializers.ModelSerializer):
 class ConsultaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consulta
-        fields = '__all__'
-
-
-class PacienteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Paciente
         fields = '__all__'
 
 
@@ -146,4 +149,10 @@ class HistoricoPagamentoSerializer(serializers.ModelSerializer):
 class ContatoEmergenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContatoEmergencia
+        fields = '__all__'
+
+
+class EspecialidadeMedicaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EspecialidadeMedica
         fields = '__all__'

@@ -1,0 +1,18 @@
+<!-- equipamento_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipamentos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Lista de Equipamentos</h1>
+    <ul>
+        {% for equipamento in equipamentos %}
+            <li>{{ equipamento.nome_equipamento }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

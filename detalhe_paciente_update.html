@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Detalhe do Paciente</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Detalhe do Paciente</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="paciente_id">ID do Paciente:</label>
+                <input type="text" id="paciente_id" name="paciente_id" value="{{ detalhe_paciente.paciente_id }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nacionalidade">Nacionalidade:</label>
+                <input type="text" id="nacionalidade" name="nacionalidade" value="{{ detalhe_paciente.nacionalidade }}" required>
+            </div>
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+</body>
+</html>

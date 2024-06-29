@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso na Atualização do Contato de Emergência</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sucesso na Atualização do Contato de Emergência</h1>
+        <p>O contato de emergência foi atualizado com sucesso!</p>
+        <p><a href="{% url 'contato_emergencia_detail' contato.id %}">Ver detalhes do contato de emergência</a></p>
+    </div>
+</body>
+</html>

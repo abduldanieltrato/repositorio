@@ -1,0 +1,20 @@
+<!-- especialidade_detail.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Especialidade Médica</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Especialidade Médica</h1>
+        <div>
+            <p><strong>Nome da Especialidade:</strong> {{ especialidade.nome }}</p>
+            <p><strong>Outros Dados:</strong> {{ especialidade.outros_dados }}</p>
+        </div>
+    </div>
+</body>
+</html>

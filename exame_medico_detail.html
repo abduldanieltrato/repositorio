@@ -1,0 +1,15 @@
+<!-- exame_medico_detail.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Exame Médico</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Detalhes do Exame Médico</h1>
+    <p><strong>Nome do Exame:</strong> {{ exame.nome_exame }}</p>
+    <p><strong>Outros Dados:</strong> {{ exame.outros_dados }}</p>
+</body>
+</html>

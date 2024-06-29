@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Detalhe do Paciente</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Detalhe do Paciente</h1>
+        <p>Tem certeza de que deseja excluir o detalhe do paciente com ID: {{ detalhe_paciente.paciente_id }} e nacionalidade: {{ detalhe_paciente.nacionalidade }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Excluir</button>
+            <a href="{% url 'detalhe_paciente_list' %}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

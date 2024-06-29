@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Alergia ou Condição</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Alergia ou Condição</h1>
+        <div class="details">
+            <p><strong>Paciente ID:</strong> {{ alergia_condicao.paciente_id }}</p>
+            <p><strong>Alergia/Condição:</strong> {{ alergia_condicao.alergia_condicao }}</p>
+            <p><strong>Outros Dados:</strong> {{ alergia_condicao.outros_dados }}</p>
+        </div>
+    </div>
+</body>
+</html>

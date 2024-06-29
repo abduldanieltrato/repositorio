@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Procedimento Cirúrgico</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Procedimento Cirúrgico</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="paciente_id">Paciente ID:</label><br>
+            <input type="text" id="paciente_id" name="paciente_id" value="{{ procedimento_cirurgico.paciente_id }}"><br>
+            <label for="tipo_procedimento">Tipo de Procedimento:</label><br>
+            <input type="text" id="tipo_procedimento" name="tipo_procedimento" value="{{ procedimento_cirurgico.tipo_procedimento }}"><br>
+            <label for="medico_cirurgiao">Médico Cirurgião:</label><br>
+            <input type="text" id="medico_cirurgiao" name="medico_cirurgiao" value="{{ procedimento_cirurgico.medico_cirurgiao }}"><br>
+            <label for="data_cirurgia">Data da Cirurgia:</label><br>
+            <input type="date" id="data_cirurgia" name="data_cirurgia" value="{{ procedimento_cirurgico.data_cirurgia }}"><br>
+            <label for="outros_dados">Outros Dados:</label><br>
+            <textarea id="outros_dados" name="outros_dados">{{ procedimento_cirurgico.outros_dados }}</textarea><br><br>
+            <input type="submit" value="Atualizar Procedimento Cirúrgico">
+        </form>
+    </div>
+</body>
+</html>

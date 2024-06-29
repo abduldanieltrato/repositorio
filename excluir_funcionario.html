@@ -1,0 +1,41 @@
+<!-- myapp/templates/myapp/excluir_funcionario.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Funcionário</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Funcionário</h1>
+        <p>Tem a certeza que deseja excluir o funcionário <strong>{{ funcionario.nome_funcionario }}</strong>?</p>
+        <button id="deleteButton">Sim, excluir</button>
+        <button onclick="window.location.href='/'">Não, cancelar</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            fetch(`/funcionario_delete/${{{ funcionario.id }}}/`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('message').innerText = 'Funcionário excluído com sucesso!';
+                } else {
+                    throw new Error('Falha ao excluir o funcionário.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('message').innerText = 'Erro ao excluir o funcionário.';
+            });
+        });
+    </script>
+</body>
+</html>

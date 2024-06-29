@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros de Internação</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Lista de Registros de Internação</h1>
+    <ul>
+        {% for registro_internacao in registros_internacao %}
+        <li>
+            <a href="{% url 'registro_internacao_detail' registro_internacao.id %}">
+                Registro de Internação {{ registro_internacao.id }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

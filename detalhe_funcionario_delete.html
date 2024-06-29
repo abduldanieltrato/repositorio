@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Detalhe do Funcionário</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Detalhe do Funcionário</h1>
+        <p>Tem certeza de que deseja excluir o detalhe do funcionário com ID: {{ detalhe_funcionario.funcionario_id }} e nacionalidade: {{ detalhe_funcionario.nacionalidade }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Excluir</button>
+            <a href="{% url 'detalhe_funcionario_list' %}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

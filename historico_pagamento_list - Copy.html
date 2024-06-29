@@ -1,0 +1,36 @@
+<!-- historico_pagamento_list.html -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Pagamentos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico de Pagamentos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for historico_pagamento in historico_pagamentos %}
+                <tr>
+                    <td>{{ historico_pagamento.id }}</td>
+                    <td>{{ historico_pagamento.data }}</td>
+                    <td>{{ historico_pagamento.valor }}</td>
+                    <td>{{ historico_pagamento.descricao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

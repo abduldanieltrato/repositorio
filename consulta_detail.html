@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Consulta</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes da Consulta</h1>
+        <table>
+            <tr>
+                <th>Paciente</th>
+                <td>{{ consulta.paciente.nome_paciente }}</td>
+            </tr>
+            <tr>
+                <th>Funcionário</th>
+                <td>{{ consulta.funcionario.nome_funcionario }}</td>
+            </tr>
+            <tr>
+                <th>Data de Início</th>
+                <td>{{ consulta.data_inicio_consulta }}</td>
+            </tr>
+            <tr>
+                <th>Data de Fim</th>
+                <td>{{ consulta.data_fim_consulta }}</td>
+            </tr>
+            <tr>
+                <th>Diagnóstico</th>
+                <td>{{ consulta.diagnostico }}</td>
+            </tr>
+            <tr>
+                <th>Outros Dados</th>
+                <td>{{ consulta.outros_dados }}</td>
+            </tr>
+        </table>
+        <p><a href="{% url 'consulta_list' %}">Voltar à lista de consultas</a></p>
+    </div>
+</body>
+</html>

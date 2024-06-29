@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro na Atualização do Paciente</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Erro na Atualização do Paciente</h1>
+        <p>{{ errors }}</p>
+        <p><a href="/paciente_update/{{ paciente.id }}">Tentar novamente</a></p>
+    </div>
+</body>
+</html>

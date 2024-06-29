@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Contato de Emergência</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Contato de Emergência</h1>
+        <p><strong>Nome:</strong> {{ contato.nome }}</p>
+        <p><strong>Relacionamento:</strong> {{ contato.relacionamento }}</p>
+        <p><strong>Telefone:</strong> {{ contato.telefone }}</p>
+        <p><strong>Outros Dados:</strong> {{ contato.outros_dados }}</p>
+        <p><a href="{% url 'contato_emergencia_list' %}">Voltar à lista de contatos de emergência</a></p>
+    </div>
+</body>
+</html>

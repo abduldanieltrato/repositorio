@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Alergia ou Condição</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Nova Alergia ou Condição</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="paciente_id">ID do Paciente:</label>
+            <input type="text" id="paciente_id" name="paciente_id" required>
+            <label for="alergia_condicao">Alergia ou Condição:</label>
+            <input type="text" id="alergia_condicao" name="alergia_condicao" required>
+            <label for="outros_dados">Outros Dados:</label>
+            <textarea id="outros_dados" name="outros_dados"></textarea>
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+</body>
+</html>

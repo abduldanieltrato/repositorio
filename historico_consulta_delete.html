@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Histórico de Consulta</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Histórico de Consulta</h1>
+        <p>Você tem certeza de que deseja excluir o histórico de consulta abaixo?</p>
+        <ul>
+            <li><strong>Paciente ID:</strong> {{ historico_consulta.paciente_id }}</li>
+            <li><strong>Funcionário ID:</strong> {{ historico_consulta.funcionario_id }}</li>
+            <li><strong>Data da Consulta:</strong> {{ historico_consulta.data_consulta }}</li>
+            <li><strong>Diagnóstico:</strong> {{ historico_consulta.diagnostico }}</li>
+            <li><strong>Tratamento:</strong> {{ historico_consulta.tratamento }}</li>
+            <li><strong>Outros Dados:</strong> {{ historico_consulta.outros_dados }}</li>
+        </ul>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Confirmar Exclusão">
+        </form>
+    </div>
+</body>
+</html>

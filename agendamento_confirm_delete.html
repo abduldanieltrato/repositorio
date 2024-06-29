@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão do Agendamento</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão do Agendamento</h1>
+        <p>Tem certeza de que deseja excluir o agendamento <strong>{{ agendamento.nome_agendamento }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Excluir</button>
+            <a href="{% url 'agendamento_list' %}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Receitas Médicas</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Receitas Médicas</h1>
+        <ul>
+            {% for receita_medica in receitas_medicas %}
+                <li>{{ receita_medica.nome_paciente }} - {{ receita_medica.data }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

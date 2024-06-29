@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Consumível</title>
+    <link rel="stylesheet" href="{% static 'css/consumivel.css' %}">
+</head>
+<body>
+    <h1>Atualizar Consumível</h1>
+    <form action="{% url 'consumivel_update' consumivel_id=consumivel.id %}" method="post">
+        {% csrf_token %}
+        <label for="nome_consumivel">Nome do Consumível:</label><br>
+        <input type="text" id="nome_consumivel" name="nome_consumivel" value="{{ consumivel.nome_consumivel }}"><br>
+        <label for="estoque_consumivel">Estoque do Consumível:</label><br>
+        <input type="number" id="estoque_consumivel" name="estoque_consumivel" value="{{ consumivel.estoque_consumivel }}"><br>
+        <label for="data_aquisicao">Data de Aquisição:</label><br>
+        <input type="date" id="data_aquisicao" name="data_aquisicao" value="{{ consumivel.data_aquisicao }}"><br>
+        <label for="departamento">Departamento:</label><br>
+        <input type="text" id="departamento" name="departamento" value="{{ consumivel.departamento }}"><br>
+        <label for="outros_dados">Outros Dados:</label><br>
+        <input type="text" id="outros_dados" name="outros_dados" value="{{ consumivel.outros_dados }}"><br><br>
+        <input type="submit" value="Atualizar">
+    </form>
+</body>
+</html>

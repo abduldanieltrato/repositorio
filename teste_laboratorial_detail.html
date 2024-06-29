@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Teste Laboratorial</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Teste Laboratorial</h1>
+        <ul>
+            <li><strong>ID do Paciente:</strong> {{ teste_laboratorial.paciente_id }}</li>
+            <li><strong>Tipo de Teste:</strong> {{ teste_laboratorial.tipo_teste }}</li>
+            <li><strong>Resultado:</strong> {{ teste_laboratorial.resultado }}</li>
+            <li><strong>Data do Teste:</strong> {{ teste_laboratorial.data_teste }}</li>
+            <li><strong>Outros Dados:</strong> {{ teste_laboratorial.outros_dados }}</li>
+        </ul>
+        <a href="{% url 'lista_testes_laboratoriais' %}">Voltar para a lista de testes laboratoriais</a>
+    </div>
+</body>
+</html>
